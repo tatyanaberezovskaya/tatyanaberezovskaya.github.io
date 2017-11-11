@@ -37,12 +37,11 @@
          Первый сайт за 3 дня</p>
       </div>
     </div>
-    <a class="main_down" href="#projects"><i class="icon-down"></i></a>
+    <a class="main_down slowly" href="#portfolio"><i class="icon-down"></i></a>
   </div>
 
-  <div class="portfolio">
+  <div class="portfolio" id="portfolio">
     <div class="container">
-      <div id="projects"></div>
       <h2 class="section_header">Портфолио</h2>
       <div clas="row">
         <div class="col-md-4">
@@ -118,5 +117,17 @@
         });
       });
     </script>
+<!-- Плавная прокрутка -->
+    <script>
+ $(document).ready(function(){
+    $(".slowly").on("click", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 500);
+    });
+});
+</script>
+
   </body>
 </html>
